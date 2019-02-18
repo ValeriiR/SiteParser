@@ -3,54 +3,72 @@
 }
 
 <div class="jumbotron">
-    <h1>Vacancies Parse</h1>
-  
-    <form method="post" action="~/Home/Parse">
-        <input name="url" placeholder="Enter Url" />
-        <input type="submit" class="btn btn-primary btn-default"  />      
-    </form>
+    <h1>Job Parser</h1>
+
+    <div class="row">
+
+        <div class="col-md-2" style="margin: 5px">
+            <form method="post" action="~/Home/Parse">
+                <input type="hidden" name="url" value="http://pandorajob.ru"/>
+                <input type="submit" class="btn btn-primary btn-default" value="Parse pandorajob.ru"/>
+            </form>
+        </div>
+
+        <div class="col-md-2"  style="margin: 5px">
+            <form method="post" action="~/Home/Parse">
+                <input type="hidden" name="url" value="http://sogaz.ru"/>
+                <input type="submit" class="btn btn-primary btn-default" value="Parse sogaz.ru"/>
+            </form>
+        </div>
+
+    </div>
 </div>
 
-        <table class="table">
-            <tr>
-                <th>
-                   Salary
-                </th>
-                <th>
-                   Description
-                </th>
-                <th>
-                    City
-                </th>
-                <th>
-                    Country
-                </th>
-                <th>
-                    Vacancy
-                </th>
-                <th></th>
-            </tr>
+<table class="table">
+    <tr>
+        <th>
+            Vacancy
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Country
+        </th>
 
-            @foreach (var item in ViewBag.Vacancies) {
-                <tr>
-                    <td>
-                       @item.Salary
-                    </td>
-                    <td>
-                        @item.Description
-                    </td>
-                    <td>
-                        @item.City
-                    </td>
-                    <td>
-                        @item.Country
-                    </td>
-                    <td>
-                        @item.VacancyName
-                    </td>
-                  
-                </tr>
-            }
+        <th>
+            City
+        </th>
 
-        </table>
-      
+        <th>
+            Salary
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in ViewBag.Vacancies)
+    {
+        <tr>
+            <td>
+                @item.VacancyName
+            </td>
+            <td>
+                @item.Description
+            </td>
+            <td>
+                @item.Country
+            </td>
+
+            <td>
+                @item.City
+            </td>
+
+
+            <td>
+                @item.Salary
+            </td>
+        </tr>
+    }
+
+</table>
+
