@@ -22,13 +22,7 @@ namespace Test.Model.Services.Concrete
             _vacancyRepository = new VacancyRepository();
             _webSiteSettingsRepository = new WebSiteSettingsRepository();
         }
-
-        //public ParseService(IVacancyRepository vacancyRepository)
-        //{
-        //    _vacancyRepository = vacancyRepository;
-        //}
-
-
+  
 
         public List<Vacancy> Parse(string url)
         {

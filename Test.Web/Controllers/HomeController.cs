@@ -9,12 +9,7 @@ namespace Test.Web.Controllers
     public class HomeController : Controller
     {
         private IParseService _parseService;
-
-        //HomeController(IParseService parseService)
-        //{
-        //    _parseService = parseService;
-        //}
-
+      
         public HomeController()
         {
             _parseService = new ParseService();
@@ -31,8 +26,7 @@ namespace Test.Web.Controllers
         {
             List<Vacancy> vacancies = _parseService.Parse(url);
             ViewBag.Vacancies = vacancies;
-            return View("~/Views/Home/Index.cshtml");
-          //  return RedirectToAction("Index", "Home");
+            return View("~/Views/Home/Index.cshtml");        
         }
 
 
