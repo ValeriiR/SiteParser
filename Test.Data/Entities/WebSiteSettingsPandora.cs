@@ -70,7 +70,6 @@ namespace Test.Data.Entities
 
                             string description = text;
 
-
                             vacancies.Add(new Vacancy
                             {
                                 Country = "",
